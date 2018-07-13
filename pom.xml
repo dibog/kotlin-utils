@@ -20,7 +20,7 @@
 
     <groupId>io.github.dibog</groupId>
     <artifactId>kotlin-utils</artifactId>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>0.0.3</version>
 	
 	<name>kotlin-utils</name>
 	<description>Some utility functions / classes to be used with Kotlin.</description>
@@ -239,7 +239,7 @@
         <connection>scm:git:git://github.com/dibog/kotlin-utils.git</connection>
         <developerConnection>scm:git:git@github.com:dibog/kotlin-utils.git</developerConnection>
         <url>https://github.com/dibog/kotlin-utils</url>
-        <tag>HEAD</tag>
+        <tag>kotlin-utils-0.0.3</tag>
     </scm>
 
     <profiles>
