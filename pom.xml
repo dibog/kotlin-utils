@@ -20,7 +20,7 @@
 
     <groupId>io.github.dibog</groupId>
     <artifactId>kotlin-utils</artifactId>
-    <version>0.0.4-SNAPSHOT</version>
+    <version>0.0.3-SNAPSHOT</version>
 	
 	<name>kotlin-utils</name>
 	<description>Some utility functions / classes to be used with Kotlin.</description>
@@ -49,7 +49,6 @@
 
     <properties>
         <kotlin.version>1.2.51</kotlin.version>
-        <dokka.version>0.9.15</dokka.version>
         <slf4j.version>1.7.25</slf4j.version>
     </properties>
 
@@ -176,20 +175,7 @@
             </plugin>
 
             <plugin>
-                <groupId>org.jetbrains.dokka</groupId>
-                <artifactId>dokka-maven-plugin</artifactId>
-                <version>${dokka.version}</version>
-                <executions>
-                    <execution>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>javadocJar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
 
-            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
                 <version>3.0.1</version>
@@ -266,13 +252,5 @@
             </build>
         </profile>
     </profiles>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <id>jcenter</id>
-            <name>JCenter</name>
-            <url>https://jcenter.bintray.com/</url>
-        </pluginRepository>
-    </pluginRepositories>
 
 </project>
