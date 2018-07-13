@@ -48,6 +48,7 @@
 	</developers>
 
     <properties>
+        <dokka.version>0.9.17</dokka.version>
         <kotlin.version>1.2.51</kotlin.version>
         <slf4j.version>1.7.25</slf4j.version>
     </properties>
@@ -102,6 +103,19 @@
 
     <build>
         <plugins>
+
+            <plugin>
+                <groupId>org.jetbrains.dokka</groupId>
+                <artifactId>dokka-maven-plugin</artifactId>
+                <version>${dokka.version}</version>
+                <executions>
+                    <execution>
+                        <id>creating-dokka</id>
+                        <phase>package</phase>
+                        <goals><goal>javadocJar</goal></goals>
+                    </execution>
+                </executions>
+            </plugin>
 
             <plugin>
                 <artifactId>kotlin-maven-plugin</artifactId>
@@ -200,6 +214,14 @@
         </plugins>
     </build>
 
+    <repositories>
+        <repository>
+            <id>spring-repo</id>
+            <name>Spring Repository</name>
+            <url>http://repo.spring.io/plugins-release/</url>
+        </repository>
+    </repositories>
+
     <distributionManagement>
 
         <snapshotRepository>
@@ -252,5 +274,13 @@
             </build>
         </profile>
     </profiles>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>jcenter</id>
+            <name>JCenter</name>
+            <url>https://jcenter.bintray.com/</url>
+        </pluginRepository>
+    </pluginRepositories>
 
 </project>
