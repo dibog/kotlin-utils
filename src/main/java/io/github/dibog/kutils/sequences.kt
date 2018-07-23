@@ -1,3 +1,4 @@
+package io.github.dibog.kutils
 
 import kotlin.coroutines.experimental.buildSequence
 
