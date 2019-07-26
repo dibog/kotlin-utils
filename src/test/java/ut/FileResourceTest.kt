@@ -5,7 +5,6 @@ import assertk.assertions.isEqualTo
 import assertk.assertions.isFalse
 import assertk.assertions.isTrue
 import io.github.dibog.kutils.FileResource
-import io.github.dibog.spec.extension.test
 import org.spekframework.spek2.Spek
 import org.spekframework.spek2.style.specification.describe
 import java.io.ByteArrayInputStream
@@ -31,19 +30,19 @@ object FileResourceSpec : Spek({
             resource.delete()
         }
 
-        test("exists") {
+        it("exists") {
             assertThat(resource.exists()).isTrue()
         }
 
-        test("has a file size") {
+        it("has a file size") {
             assertThat(resource.size()).isEqualTo(123)
         }
 
-        test("is a regular file") {
+        it("is a regular file") {
             assertThat(resource.isReadable()).isTrue()
         }
 
-        test("is not a dolfer") {
+        it("is not a dolfer") {
             assertThat(resource.isDirectory()).isFalse()
         }
     }

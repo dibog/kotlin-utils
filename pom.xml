@@ -48,11 +48,15 @@
 	</developers>
 
     <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <kotlin.compiler.jvmTarget>1.8</kotlin.compiler.jvmTarget>
+
         <dokka.version>0.9.17</dokka.version>
-        <kotlin.version>1.3.21</kotlin.version>
-        <slf4j.version>1.7.25</slf4j.version>
+        <kotlin.version>1.3.41</kotlin.version>
+        <slf4j.version>1.7.26</slf4j.version>
         <junit.version>4.12</junit.version>
-        <spek_version>2.0.2</spek_version>
+        <spek_version>2.0.5</spek_version>
     </properties>
 
     <dependencies>
@@ -87,7 +91,7 @@
         <dependency>
             <groupId>com.willowtreeapps.assertk</groupId>
             <artifactId>assertk-jvm</artifactId>
-            <version>0.13</version>
+            <version>0.19</version>
             <scope>test</scope>
         </dependency>
 
@@ -118,12 +122,6 @@
             <version>${spek_version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>io.github.dibog</groupId>
-            <artifactId>spek-extension</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
 
@@ -288,6 +286,11 @@
 
             <build>
                 <plugins>
+                    <plugin>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>2.22.0</version>
+                    </plugin>
+
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
