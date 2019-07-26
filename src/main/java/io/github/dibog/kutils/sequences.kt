@@ -1,11 +1,10 @@
 package io.github.dibog.kutils
 
-import kotlin.coroutines.experimental.buildSequence
 
 fun <T> Sequence<T>.doEffect(effect: (T) -> Unit): Sequence<T> {
     val iter = iterator()
 
-    return buildSequence {
+    return sequence {
         iter.forEach {
             effect(it)
             yield(it)
@@ -16,8 +15,8 @@ fun <T> Sequence<T>.doEffect(effect: (T) -> Unit): Sequence<T> {
 fun <T> Sequence<T>.window(window: Long, trim: Boolean = false, f: (T)->Long): Sequence<List<T>> {
     val iter = iterator()
 
-    // check that the values monotone increasing
-    return buildSequence {
+    // check that the values are monotone increasing
+    return sequence {
         var nextTime = -1L
         lateinit var currentList : MutableList<T>
 
@@ -25,7 +24,7 @@ fun <T> Sequence<T>.window(window: Long, trim: Boolean = false, f: (T)->Long): S
             val itemTime = f(it)
 
             if (nextTime < 0) {
-                nextTime = if(trim) (itemTime/window) * window else  itemTime
+                nextTime = if(trim) (itemTime/window) * window else itemTime
                 nextTime += window
                 currentList = mutableListOf()
             }
