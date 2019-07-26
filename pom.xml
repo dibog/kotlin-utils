@@ -254,16 +254,24 @@
     </pluginRepositories>
 
     <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-
         <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+            <id>github</id>
+            <name>GitHub dibog Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/dibog/kotlin-utils</url>
         </repository>
     </distributionManagement>
+
+<!--    <distributionManagement>-->
+<!--        <snapshotRepository>-->
+<!--            <id>ossrh</id>-->
+<!--            <url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
+<!--        </snapshotRepository>-->
+
+<!--        <repository>-->
+<!--            <id>ossrh</id>-->
+<!--            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>-->
+<!--        </repository>-->
+<!--    </distributionManagement>-->
 
     <scm>
         <connection>scm:git:git://github.com/dibog/kotlin-utils.git</connection>
@@ -271,6 +279,8 @@
         <url>https://github.com/dibog/kotlin-utils</url>
         <tag>HEAD</tag>
     </scm>
+
+
 
 <!--    <profiles>-->
 
